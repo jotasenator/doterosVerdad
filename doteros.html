@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html >
+
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Adivino Personalidad</title>
+	
+
+	<style>
+		button{
+			
+			background:#6B8E23;
+			border-radius:15%;
+			color:white;
+			font-weight:bold;
+			height:100px;
+			width:200px;
+		}
+		body{
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			max-width: 100vw;
+			
+			padding:10px;
+			
+		}
+		input{
+			padding:10px;
+			font-size: medium;
+		}
+		div{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			margin-top:50px;
+		}
+		span{
+			display: inline-block;			
+			margin-top: -36px;
+		}
+		
+		
+	</style>
+	
+</head>
+
+<body>
+		
+	<div>
+	<label for='input'><h2>Su nombre:&nbsp; </h2></label>
+	<input id='input' type='text' placeholder="Teclee su nombre">
+	</div>
+	<h2>Respire...</h2>
+	<div>
+	<h2>Presione el bot&oacute;n <span>&#128073;</span></h2>
+	<button id='button'>Escucha la verdad!</button>
+	</div>
+	<script>
+
+		let inputValue = document.getElementById('input');		
+		
+		const button = document.getElementById("button");
+		const speakEs=(msg,idioma='es-ES')=>{
+			
+			const sp=new SpeechSynthesisUtterance(msg);
+			sp.lang=idioma;
+			document.lastChild.lang=idioma
+			[sp.voice]=speechSynthesis.getVoices();
+			speechSynthesis.speak(sp)
+			
+		}
+		const speakEn=(msg,idioma='en-US')=>{
+			
+			const sp=new SpeechSynthesisUtterance(msg);
+			sp.lang=idioma;
+			document.lastChild.lang=idioma
+			[sp.voice]=speechSynthesis.getVoices();
+			speechSynthesis.speak(sp)
+			
+		}
+
+		button.onclick=()=>{
+			switch (inputValue.value.toLowerCase()) {
+				case 'Felipe'.toLowerCase():
+					speakEs(`${inputValue.value} eres un doble agente que sólo sabe estar en la gozadera. Tienes a todo el mundo engañado.`)
+					return speakEn('Comunista')
+				case 'Felo'.toLowerCase():
+					speakEs(`${inputValue.value} eres un doble agente que sólo sabe estar en la gozadera. Tienes a todo el mundo engañado. `)
+					return speakEn('Comunista')
+
+				case 'Carcasés'.toLowerCase():
+					speakEs(`${inputValue.value} tu no engañas a nadie. Dice el Turiñito que tu no sabes hacer pan`)
+					return speakEn('Comunista')
+				case 'Carcases'.toLowerCase():
+					speakEs(`${inputValue.value} tu no engañas a nadie. Dice el Turiñito que tu no sabes hacer pan`)
+					return speakEn('Comunista')
+				case 'Carca'.toLowerCase():
+					 speakEs(`${inputValue.value} tu no engañas a nadie. Dice el Turiñito que tu no sabes hacer pan`)
+					return speakEn('Comunista')
+
+				case 'Turi'.toLowerCase():
+					 speakEs(`${inputValue.value} no fumes mas mariguana que eso solo te daña el cerebro. Ve a Cuba para que les de clases a Murillo de economía.`)
+					return speakEn('Comunista')
+				case 'Turiño'.toLowerCase():
+					 speakEs(`${inputValue.value} no fumes mas mariguana que eso solo te daña el cerebro. Ve a Cuba para que les de clases a Murillo de economía.`)
+					return speakEn('Comunista')
+				case 'Ernesto'.toLowerCase():
+					 speakEs(`${inputValue.value} no fumes mas mariguana que eso solo te daña el cerebro. Ve a Cuba para que les de clases a Murillo de economía.`)
+					return speakEn('Comunista')
+
+				case 'David'.toLowerCase():
+					 speakEs(`${inputValue.value} deja el PEETEE que eso hace daño. Dale unas clases de dota a la gente del grupo.`)
+					return speakEn('Comunista')
+				case 'Davi'.toLowerCase():
+					 speakEs(`${inputValue.value} deja el PEETEE que eso hace daño. Dale unas clases de dota a la gente del grupo.`)
+					return speakEn('Comunista')
+				case 'Davicito'.toLowerCase():
+					 speakEs(`${inputValue.value} deja el PEETEE que eso hace daño. Dale unas clases de dota a la gente del grupo.`)
+					return speakEn('Comunista')
+
+				case 'Jorge'.toLowerCase():
+					 speakEs(`${inputValue.value} si armas un equipo de dota2 con cuatro clones tuyos de 10 juegos pierdes 9. Eso te pasa por comunista jajaja`)
+					return speakEn('Comunista')
+				case 'George'.toLowerCase():
+					 speakEs(`${inputValue.value} si armas un equipo de dota2 con cuatro clones tuyos de 10 pierdes 9. Eso te pasa por comunista jajaja`)
+					return speakEn('Comunista')
+
+				case 'Tomas'.toLowerCase():
+					 speakEs(`${inputValue.value} andas por el mundo encubierto y haciendo fogatas ahumando carnes y tomando cerveza. Eres discipulo de Felipe. Otro comunista más! Tomás, toma más tomás!`)
+					return speakEn('Comunista')
+				case 'Tomás'.toLowerCase():
+					 speakEs(`${inputValue.value} andas por el mundo encubierto y haciendo fogatas ahumando carnes y tomando cerveza. Eres discipulo de Felipe. `)
+					return speakEn('Otro comunista más!Tomás, toma más tomás!')
+				case 'Toma'.toLowerCase():
+					 speakEs(`${inputValue.value} andas por el mundo encubierto y haciendo fogatas ahumando carnes y tomando cerveza. Eres discipulo de Felipe.`)
+					return speakEn('Otro comunista más!Tomás, toma más tomás!')
+
+				case 'Pogoloti'.toLowerCase():
+					 speakEs(`${inputValue.value} no comas mas carne de res que estas más chino que los comunistas estos. No hay damage`)
+					return speakEn('Comunista')
+				case 'Angel'.toLowerCase():
+					 speakEs(`${inputValue.value} no comas mas carne de res que estas más chino que los comunistas estos. No hay damage`)
+					return speakEn('Comunista')
+				case 'Ángel'.toLowerCase():
+					 speakEs(`${inputValue.value} no comas mas carne de res que estas más chino que los comunistas estos.`)
+					return speakEn('Comunista')
+								
+				default:
+					speakEs(`${inputValue.value} eres tan pendejo que no eres ni comunista. Sólo te cuidas tus perras y gordas...`)
+					return speakEn('Eres un Comunista')
+			}
+			
+			
+		}
+		
+
+	</script>
+</body>
+	
+</body>
+</html>
